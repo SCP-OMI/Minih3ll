@@ -6,16 +6,14 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 21:05:44 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 21:08:22 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/16 22:49:18 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-// Prompt colors
-# define GRN	"\001\e[0;32m\002"
-# define MAG	"\001\e[0;35m\002"
+# define RED	"\001\e[0;31m\002"
 # define WHT	"\001\e[0;37m\002"
 # define CRESET	"\001\e[0m\002"
 

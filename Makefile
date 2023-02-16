@@ -53,7 +53,7 @@ NAME = minishell
 all : $(NAME)
 
 $(NAME) : $(SRC)
-	@gcc $(FLAGS) $(SRC) Libft/libft.a -o $(NAME) -lreadline -L /opt/homebrew/Cellar/readline/8.2.1/lib -I /opt/homebrew/Cellar/readline/8.2.1/include
+	@gcc $(FLAGS) $(SRC) libft/libft.a -o $(NAME) -lreadline -L/Users/mcharouh/homebrew/opt/readline/lib -I/Users/mcharouh/homebrew/opt/readline/include
 clean :
 	@rm -rf $(NAME)
 	

@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:59:14 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 21:09:31 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/16 23:57:06 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	checknew(char *args)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	if (args[0] == '-' && args[i])
 	{
 		while (args[i])
@@ -41,8 +41,8 @@ int	checknew(char *args)
 
 int	echo(char **args)
 {
-	int	i;
-	int	new_line;
+	int		i;
+	int		new_line;
 
 	new_line = 1;
 	i = 1;

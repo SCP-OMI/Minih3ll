@@ -1,14 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:     #
 #                                                     +:+ +:+         +:+      #
-#    By: mtoruham
- <mtourham@student.1337.ma>            +#+  +:+       +#+         #
+#    By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/29 19:39:15 by mtourham        #+#    #+#              #
-#    Updated: 2022/06/22 15:45:49 by mtoruham
-         ###   ########.fr        #
+#    Created: 2021/07/29 19:39:15 by mtourham          #+#    #+#              #
+#    Updated: 2023/02/16 22:35:38 by OMI              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +43,8 @@ SRCS	=	ft_isalpha.c \
 			ft_putchar_fd.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
-			ft_putnbr_fd.c 
+			ft_putnbr_fd.c
+
 B_SRCS	=	ft_lstadd_back.c \
 			ft_lstadd_front.c \
 			ft_lstclear.c \

@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 21:03:20 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 21:03:21 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/16 22:41:39 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	check_args_error(char **args)
 	}
 	exit_status = args[1];
 	if (!fits_in_long_long(exit_status))
-		exit_with_error("exit", "numeric argument required", BUILTIN_MISUSE);
+		exit_with_error("exit", "numeric argument required", 255);
 	if (args[2] != NULL)
 		print_error_msg("exit", "too many arguments");
 }
