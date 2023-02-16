@@ -1,29 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   echo.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/16 20:59:14 by OMI               #+#    #+#             */
+/*   Updated: 2023/02/16 21:09:31 by OMI              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
 
 int	basic_check(char *s)
 {
-	if(ft_strncmp(s,"echo",4) == 0)
-		return 1;
-	return 0;
+	if (ft_strncmp(s, "echo", 4) == 0)
+		return (1);
+	return (0);
 }
 
-int checknew(char *args)
+int	checknew(char *args)
 {
-    int i = 1;
+	int	i;
 
-    if (args[0] == '-' && args[i])
-    {
-        while(args[i])
-        {
-            if(args[i] != 'n')
-            {
-                return 1;
-            }
-            i++;
-        }
-		return 0;
-    }
-    return 1;
+	i = 0;
+	if (args[0] == '-' && args[i])
+	{
+		while (args[i])
+		{
+			if (args[i] != 'n')
+			{
+				return (1);
+			}
+			i++;
+		}
+		return (0);
+	}
+	return (1);
 }
 
 int	echo(char **args)

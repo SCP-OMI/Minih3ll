@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:55:15 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 20:55:26 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/16 21:10:49 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,23 +96,4 @@ size_t	minienv_size(t_env *minienv)
 		aux = aux->next;
 	}
 	return (size);
-}
-
-char	**minienv_to_envp(t_env *minienv)
-{
-	char	**envp;
-	t_env	*aux;
-	int		i;
-
-	envp = malloc(sizeof(char *) * (minienv_size(minienv) + 1));
-	aux = minienv;
-	i = 0;
-	while (aux)
-	{
-		envp[i] = ft_strdup(aux->key_pair);
-		i++;
-		aux = aux->next;
-	}
-	envp[i] = NULL;
-	return (envp);
 }

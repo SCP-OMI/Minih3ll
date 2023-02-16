@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   errors.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/16 21:05:00 by OMI               #+#    #+#             */
+/*   Updated: 2023/02/16 21:08:08 by OMI              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ERRORS_H
 # define ERRORS_H
 
@@ -11,7 +23,7 @@
 # define CMD_NOT_FOUND_MSG	"command not found"
 # define NOT_EXECUTABLE_MSG "Is a directory"
 
-int 	g_sigexitcode;
+int		g_sigexitcode;
 
 int		print_error_msg(char *command, char *msg);
 void	exit_with_error(char *command, char *msg, int error);

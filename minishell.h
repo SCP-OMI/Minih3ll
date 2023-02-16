@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/16 21:05:44 by OMI               #+#    #+#             */
+/*   Updated: 2023/02/16 21:08:22 by OMI              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
@@ -21,8 +33,6 @@
 # include "includes/minienv.h"
 # include "includes/builtins.h"
 # include "includes/executes.h"
-
-int sigint_exit_status;
 
 // minishell
 int			minishell(t_env	*minienv);

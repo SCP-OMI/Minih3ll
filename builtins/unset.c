@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   unset.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/16 21:03:36 by OMI               #+#    #+#             */
+/*   Updated: 2023/02/16 21:03:41 by OMI              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
 
 static void	minienv_del_next_node(t_env **node)
@@ -15,7 +27,8 @@ static void	remove_from_minienv(char *varname, t_env **minienv)
 	t_env	*aux;
 
 	aux = *minienv;
-	if (!ft_strncmp(aux->key_pair, varname, ft_strlen(varname)) && aux->key_pair[ft_strlen(varname)] == '=')
+	if (!ft_strncmp(aux->key_pair, varname, ft_strlen(varname))
+		&& aux->key_pair[ft_strlen(varname)] == '=')
 	{
 		*minienv = aux->next;
 		free(aux->key_pair);
