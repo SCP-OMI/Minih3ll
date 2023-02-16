@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:55:15 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 23:56:05 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 00:53:18 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,21 @@ void	minienv_var_update(char *name, char *value, t_env *minienv)
 	}
 }
 
+void	append_values(t_env **aux, char *value, char *name)
+{
+	char	*old_keypair;
+
+	old_keypair = (*aux)->key_pair;
+	(*aux)->key_pair = create_keypair(name, value);
+	free(old_keypair);
+}
+
 void	minienv_update(char *name, char *value, t_env *minienv)
 {
 	t_env	*aux;
 	char	*new_keypair;
 	char	*aux_value;
+	char	*joined_str;
 
 	aux = minienv_node(name, minienv);
 	if (!aux)
@@ -79,21 +89,8 @@ void	minienv_update(char *name, char *value, t_env *minienv)
 		aux_value = value_only(aux->key_pair);
 		if (!aux_value)
 			aux_value = "";
-		aux->key_pair = create_keypair(name, ft_strjoin(aux_value, value));
+		joined_str = ft_strjoin(aux_value, value);
+		append_values(&aux, joined_str, name);
+		free(joined_str);
 	}
-}
-
-size_t	minienv_size(t_env *minienv)
-{
-	size_t	size;
-	t_env	*aux;
-
-	size = 0;
-	aux = minienv;
-	while (aux)
-	{
-		size++;
-		aux = aux->next;
-	}
-	return (size);
 }

@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:55:38 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 20:55:39 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 00:53:23 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,19 @@ t_env	*init_minienv(char **envp)
 	list_append(home, &list);
 	free(home);
 	return (list);
+}
+
+size_t	minienv_size(t_env *minienv)
+{
+	size_t	size;
+	t_env	*aux;
+
+	size = 0;
+	aux = minienv;
+	while (aux)
+	{
+		size++;
+		aux = aux->next;
+	}
+	return (size);
 }

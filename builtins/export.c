@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 21:03:27 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 23:56:42 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 00:53:44 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 static int	declare_env(t_env *minienv)
 {
 	t_env	*aux;
+	char	*s;
 
 	aux = minienv;
 	while (aux)
 	{
 		ft_putstr_fd("declare -x ", STDOUT_FILENO);
-		ft_putstr_fd(name_only(aux->key_pair), STDOUT_FILENO);
+		s = name_only(aux->key_pair);
+		ft_putstr_fd(s, STDOUT_FILENO);
+		free(s);
 		if (ft_strchr(aux->key_pair, '='))
 		{
 			ft_putstr_fd("=", STDOUT_FILENO);
@@ -32,6 +35,20 @@ static int	declare_env(t_env *minienv)
 		aux = aux->next;
 	}
 	return (0);
+}
+
+int	check_dup(char *key_pair, t_env *minienv)
+{
+	t_env	*aux;
+
+	aux = minienv;
+	while (aux)
+	{
+		if (ft_strncmp(key_pair, aux->key_pair, ft_strlen(key_pair)) == 0)
+			return (0);
+		aux = aux->next;
+	}
+	return (1);
 }
 
 int	builtin_export(char **args, t_env **minienv)
@@ -53,7 +70,7 @@ int	builtin_export(char **args, t_env **minienv)
 			print_varname_error_msg("export", key_pair);
 			exit_status = EXIT_FAILURE;
 		}
-		else
+		else if (check_dup(key_pair, *minienv))
 			minienv_update(varname, value_only(key_pair), *minienv);
 		free(varname);
 		args++;
