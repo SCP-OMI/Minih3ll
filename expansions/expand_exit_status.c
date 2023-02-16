@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:53:35 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 20:53:36 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/16 21:14:34 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,10 @@ void	expand_exit_status(char **input, int exit_status)
 		free(exit_status_str);
 		expand_exit_status(input, exit_status);
 	}
+}
+
+void	handle_expansions(char **input, t_env *minienv, int exit_status)
+{
+	expand_exit_status(input, exit_status);
+	expand_variables(input, minienv);
 }

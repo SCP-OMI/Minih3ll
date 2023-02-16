@@ -19,8 +19,6 @@ SRC = src/main.c\
 		executes/wait.c\
 		expansions/expand_exit_status.c\
 		expansions/expand_variables.c\
-		expansions/handle_expansions.c\
-		expansions/variables_utils.c\
 		minienv/free_minienv.c\
 		minienv/minienv_str_utils.c\
 		minienv/minienv_utils.c\
