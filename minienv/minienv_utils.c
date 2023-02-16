@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minienv_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/16 20:55:15 by OMI               #+#    #+#             */
+/*   Updated: 2023/02/16 20:55:26 by OMI              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
 
 char	*minienv_value(char *name, t_env *minienv)
@@ -16,11 +28,11 @@ t_env	*minienv_node(char *name, t_env *minienv)
 	int		size;
 
 	aux = minienv;
-	size = ft_strlen(name); 
+	size = ft_strlen(name);
 	while (aux)
 	{
 		if (
-			ft_strncmp(name, aux->key_pair, size) == 0 
+			ft_strncmp(name, aux->key_pair, size) == 0
 			&& (aux->key_pair[size] == '=' || aux->key_pair[size] == '\0')
 		)
 			return (aux);
