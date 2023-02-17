@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:51:55 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 20:51:58 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 01:57:42 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	execute_forked_command(char *command, char **commands,
 	args = split_args(command);
 	free_array(commands);
 	if (is_builtin(args[0]))
-		execute_forked_builtin(args, minienv);
+		forked_builtin(args, minienv);
 	else
 		execute_external(args, *minienv);
 }
@@ -61,7 +61,7 @@ static void	restore_original_fds(int original_fds[2])
 	redirect_fd(original_fds[OUT], STDOUT_FILENO);
 }
 
-int	execute_multiple_commands(char **commands, t_env **minienv)
+int	multiples_commands(char **commands, t_env **minienv)
 {
 	int	original_fds[2];
 	int	*children_pid;

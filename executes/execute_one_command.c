@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:52:22 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 20:52:26 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 01:59:22 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ static int	handle_redirects(char *command, int original_fds[2])
 	{
 		if (redirect == '<')
 		{
-			if (!handle_input_redirect(command, original_fds))
+			if (!input_redirect(command, original_fds))
 				return (FAILED);
 		}
 		if (redirect == '>')
 		{
-			if (!handle_output_redirect(command, original_fds))
+			if (!output_redirect(command, original_fds))
 				return (FAILED);
 		}
 		if (redirect < 0)
@@ -66,7 +66,7 @@ int	execute_forked_external(char **args, t_env *minienv)
 	exit(EXIT_FAILURE);
 }
 
-int	execute_one_command(char *command, t_env **minienv)
+int	one_command(char *command, t_env **minienv)
 {
 	char	**args;
 	int		exit_status;

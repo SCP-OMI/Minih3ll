@@ -6,13 +6,13 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:51:39 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 20:51:40 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 01:57:43 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int	execute_forked_builtin(char **args, t_env **minienv)
+int	forked_builtin(char **args, t_env **minienv)
 {
 	int	exit_status;
 

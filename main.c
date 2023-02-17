@@ -6,11 +6,11 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:56:46 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 20:56:47 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 02:05:04 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "minishell.h"
 
 int	main(int argc, char **argv, char **envp)
 {

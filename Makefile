@@ -1,4 +1,4 @@
-SRC = src/main.c\
+SRC = main.c\
 		builtins/cd.c\
 		builtins/export.c\
 		builtins/env.c\

@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:52:48 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 20:52:50 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 01:59:23 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	save_original_fd_out(int original_fds[2])
 		original_fds[OUT] = dup(STDOUT_FILENO);
 }
 
-int	handle_input_redirect(char *command, int original_fds[2])
+int	input_redirect(char *command, int original_fds[2])
 {
 	save_original_fd_in(original_fds);
 	if (redirect_input(command) == FAILED)
@@ -35,7 +35,7 @@ int	handle_input_redirect(char *command, int original_fds[2])
 	return (SUCCESS);
 }
 
-int	handle_output_redirect(char *command, int original_fds[2])
+int	output_redirect(char *command, int original_fds[2])
 {
 	save_original_fd_out(original_fds);
 	if (redirect_output(command) == FAILED)

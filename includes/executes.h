@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 21:05:04 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 22:53:31 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 01:59:23 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 # define IN 0
 # define OUT 1
 
-int		execute_one_command(char *command, t_env	**minienv);
-int		execute_multiple_commands(char **commands, t_env **minienv);
+int		one_command(char *command, t_env **minienv);
+int		multiples_commands(char **commands, t_env **minienv);
 
 void	save_original_fd_in(int original_fds[2]);
 void	save_original_fd_out(int original_fds[2]);
-int		handle_input_redirect(char *command, int original_fds[2]);
-int		handle_output_redirect(char *command, int original_fds[2]);
+int		input_redirect(char *command, int original_fds[2]);
+int		output_redirect(char *command, int original_fds[2]);
 
 int		*init_children_pid(char **commands);
 void	clean_after_execute(int *children_pid);
 void	quit_child(char **commands, t_env **minienv);
 
-int		execute_forked_builtin(char **args, t_env **minienv);
+int		forked_builtin(char **args, t_env **minienv);
 int		execute_builtin(char **args, t_env **minienv);
 
 int		execute_external(char **args, t_env *minienv);

@@ -6,13 +6,11 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:57:40 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 20:57:41 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 01:53:02 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
-// not yet
 
 static int	get_name_end(char *name)
 {

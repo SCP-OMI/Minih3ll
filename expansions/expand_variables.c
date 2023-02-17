@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:53:41 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 21:40:04 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 03:47:45 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,18 @@ int	is_varname(char c)
 
 int	is_valid_varname(char *name)
 {
+	int	i;
+
+	i = 0;
 	if (!ft_isalpha(*name) && *name != '_')
 		return (FALSE);
-	while (*name)
+	while (name[i])
 	{
-		if (!is_varname(*name))
+		if (!is_varname(name[i]))
 			return (FALSE);
-		name++;
+		if (name[i] == '+' && name[i + 1] != '=')
+			return (FALSE);
+		i++;
 	}
 	return (TRUE);
 }

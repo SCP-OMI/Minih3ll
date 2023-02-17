@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 21:03:36 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 21:03:41 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 02:49:12 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static void	remove_from_minienv(char *varname, t_env **minienv)
 		*minienv = aux->next;
 		free(aux->key_pair);
 		free(aux);
+		free(varname);
 		return ;
 	}
 	while (aux && aux->next)

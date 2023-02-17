@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:59:14 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 23:57:06 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 03:28:43 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,12 @@ int	echo(char **args)
 	new_line = 1;
 	i = 1;
 	if (basic_check(args[0]) && args[1] == 0)
-	{
-		write(1, "\n", 1);
-		return (0);
-	}
+		return (write(1, "\n", 1));
 	while (checknew(args[i]) == 0)
 	{
 		new_line = 0;
+		if (!args[i + 1])
+			return (0);
 		i++;
 	}
 	while (args[i])

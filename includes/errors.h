@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 21:05:00 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/16 22:53:19 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 02:00:32 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # define CMD_NOT_FOUND 127
 # define PERMISSION_DENIED 126
 # define NOT_EXECUTABLE 126
-# define OUT_OF_RANGE 255
 # define FORK_ERROR -1
 
 int		print_error_msg(char *command, char *msg);

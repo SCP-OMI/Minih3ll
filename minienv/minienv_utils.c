@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:55:15 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/17 00:53:18 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 03:29:36 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,6 @@ t_env	*minienv_node(char *name, t_env *minienv)
 	return (NULL);
 }
 
-void	minienv_var_update(char *name, char *value, t_env *minienv)
-{
-	t_env	*aux;
-	char	*new_keypair;
-
-	aux = minienv_node(name, minienv);
-	if (aux)
-		aux->key_pair = create_keypair(name, value);
-	else
-	{
-		new_keypair = create_keypair(name, value);
-		list_append(new_keypair, &minienv);
-		free(new_keypair);
-		return ;
-	}
-}
-
 void	append_values(t_env **aux, char *value, char *name)
 {
 	char	*old_keypair;
@@ -65,6 +48,23 @@ void	append_values(t_env **aux, char *value, char *name)
 	old_keypair = (*aux)->key_pair;
 	(*aux)->key_pair = create_keypair(name, value);
 	free(old_keypair);
+}
+
+void	minienv_var_update(char *name, char *value, t_env *minienv)
+{
+	t_env	*aux;
+	char	*new_keypair;
+
+	aux = minienv_node(name, minienv);
+	if (aux)
+		append_values(&aux, value, name);
+	else
+	{
+		new_keypair = create_keypair(name, value);
+		list_append(new_keypair, &minienv);
+		free(new_keypair);
+		return ;
+	}
 }
 
 void	minienv_update(char *name, char *value, t_env *minienv)

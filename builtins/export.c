@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 21:03:27 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/17 00:53:44 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 03:48:01 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,22 @@ static int	declare_env(t_env *minienv)
 	return (0);
 }
 
+int	check_keypair(char *name)
+{
+	int	i;
+
+	i = 0;
+	while (name[i])
+	{
+		if (name[i + 1] && (name[i] == '+' && name[i + 1] != '='))
+			return (FALSE);
+		if (name[ft_strlen(name) - 1] == '+')
+			return (FALSE);
+		i++;
+	}
+	return (TRUE);
+}
+
 int	check_dup(char *key_pair, t_env *minienv)
 {
 	t_env	*aux;
@@ -65,7 +81,7 @@ int	builtin_export(char **args, t_env **minienv)
 	{
 		key_pair = *args;
 		varname = name_only(key_pair);
-		if (!is_valid_varname(varname))
+		if (!is_valid_varname(varname) || !check_keypair(key_pair))
 		{
 			print_varname_error_msg("export", key_pair);
 			exit_status = EXIT_FAILURE;
