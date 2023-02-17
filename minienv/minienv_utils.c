@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:55:15 by OMI               #+#    #+#             */
-/*   Updated: 2023/02/17 03:29:36 by OMI              ###   ########.fr       */
+/*   Updated: 2023/02/17 04:36:54 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	minienv_update(char *name, char *value, t_env *minienv)
 		return ;
 	}
 	else if (value && *(value - 2) != '+')
-		aux->key_pair = create_keypair(name, value);
+		append_values(&aux, value, name);
 	else
 	{
 		aux_value = value_only(aux->key_pair);
